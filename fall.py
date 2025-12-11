@@ -9,13 +9,14 @@ v2 = np.array([0., -0.1])
 
 G = 1.0
 dt = 0.01
+m1,m2 = 1,1
 positions1, positions2 = [], []
 
 for _ in range(150):
     # Vector de separación
     r = r2 - r1
     dist = np.linalg.norm(r)
-    force = G * r / dist**3
+    force = G * m1 * m2 *r / dist**3 #!r is a vector
 
     # Actualización de velocidades y posiciones
     v1 += force * dt
